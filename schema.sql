@@ -79,7 +79,9 @@ create table DivisionParticipants (
   Region                  text,
   Dojo                    text,
   Grade                   text,
-  GradeReadable           text
+  GradeReadable           text,
+  BracketRound            integer,
+  BracketIndex            integer
 );
 
 create table Config (
