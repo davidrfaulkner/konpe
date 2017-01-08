@@ -72,7 +72,7 @@ def bracket_layout(division):
 
 
 def bracket(division):
-    #division = random.shuffle(division)
+    random.shuffle(division)
     good_division = False
     if len(division) < 7:
         for i in itertools.permutations(division):
@@ -99,7 +99,7 @@ def bracket(division):
                     break
 
     print good_division, division
-
+    return list(division)
 
 
 
@@ -109,7 +109,8 @@ if __name__ == '__main__':
     dojos =['B','F','M', 'G', 'By', 'A', 'N', 'L']
 
     division = []
-    for i in range(30):
+
+    for i in range(5):
         division.append({"ParticipantID":i, "Region":random.choice(regions), "Dojo":random.choice(dojos)})
-    bracket(division)
+    division = bracket(division)
     bracket_layout(division)
