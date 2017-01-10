@@ -1,6 +1,5 @@
-from flask import Flask, request
-from flask_restful import Resource, Api
-from flask_restful import reqparse
+from flask import Flask
+from flask_restful import Api
 from json import dumps
 import logging
 import sqlite3
@@ -18,13 +17,8 @@ konpe.config.SECRETAPIKEY = "NEWSECRET"
 app = Flask(__name__)
 api = Api(app)
 
-
-
-
-
-api.add_resource(Tournament, '/Tournament')
-api.add_resource(ConfigRegion, '/Config/Region')
-
+api.add_resource(Tournament, '/tournament')
+api.add_resource(ConfigRegion, '/config/region')
 
 if __name__ == '__main__':
      app.run()
